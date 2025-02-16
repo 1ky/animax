@@ -6,7 +6,7 @@ import { FaRedditAlien, FaTelegramPlane } from "react-icons/fa";
 
 const Navbar = () => {
   return (
-    <nav className="bg-slate-800 h-24 flex justify-between">
+    <nav className="bg-slate-800 h-17 md:h-20 flex justify-between">
       <div className="flex gap-24 mx-7 w-[50%]">
         <div className="flex gap-4">
           <img
@@ -20,7 +20,7 @@ const Navbar = () => {
         </div>
         <div className="flex content-center w-[80%] relative">
           <div className="absolute top-[35%] left-4">
-            <CiSearch size="30px" />
+            <CiSearch size="24px" />
           </div>
           <input
             type="text"
@@ -31,17 +31,17 @@ const Navbar = () => {
         </div>
       </div>
       <div className="flex">
-        <div className="border-1 content-center rounded-full p-3 h-[55px] my-auto cursor-pointer mx-1.5">
-          <FaTelegramPlane size="30px" />
+        <div className="content-center rounded-full p-2 border-2 w-[40px] h-[40px] my-auto cursor-pointer">
+          <FaTelegramPlane size="20px" />
         </div>
-        <div className="border-1 content-center rounded-full p-3 h-[55px] my-auto cursor-pointer mx-1.5">
-          <FaRedditAlien size="30px" />
+        <div className="content-center rounded-full p-2 border-2 w-[40px] h-[40px] my-auto cursor-pointer">
+          <FaRedditAlien size="20px" />
         </div>
-        <div className="border-1 content-center rounded-full p-3 h-[55px] my-auto cursor-pointer mx-1.5">
-          <FaXTwitter size="30px" />
+        <div className="content-center rounded-full p-2 border-2 w-[40px] h-[40px] my-auto cursor-pointer">
+          <FaXTwitter size="20px" />
         </div>
-        <div className="border-1 content-center rounded-full p-3 h-[55px] my-auto cursor-pointer mx-12">
-          <FiUser size="30px" />
+        <div className="content-center rounded-full p-2 border-2 w-[40px] h-[40px] my-auto cursor-pointer">
+          <FiUser size="20px" />
         </div>
       </div>
     </nav>
