@@ -1,14 +1,18 @@
-import { CiSearch } from "react-icons/ci";
 import logo from "../assets/logo-placeholder.webp";
 import { FiUser } from "react-icons/fi";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaRedditAlien, FaTelegramPlane } from "react-icons/fa";
+import { IoSearchSharp } from "react-icons/io5";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
   return (
     <nav className="bg-slate-800 h-17 md:h-20 flex justify-between">
       <div className="flex gap-24 mx-7 w-[50%]">
         <div className="flex gap-4">
+          <div className="lg:hidden content-center rounded-full cursor-pointer">
+            <GiHamburgerMenu size="24px" />
+          </div>
           <img
             src={logo}
             alt="animax logo"
@@ -18,9 +22,9 @@ const Navbar = () => {
             animax
           </h1>
         </div>
-        <div className="flex content-center w-[80%] relative">
+        <div className="hidden lg:flex content-center w-[80%] relative">
           <div className="absolute top-[35%] left-4">
-            <CiSearch size="24px" />
+            <IoSearchSharp size="24px" />
           </div>
           <input
             type="text"
@@ -31,16 +35,21 @@ const Navbar = () => {
         </div>
       </div>
       <div className="flex">
-        <div className="content-center rounded-full p-2 border-2 w-[40px] h-[40px] my-auto cursor-pointer">
-          <FaTelegramPlane size="20px" />
+        <div className="flex gap-2 lg:mx-4">
+          <div className="lg:hidden content-center rounded-full p-2 border-2 w-[40px] h-[40px] my-auto cursor-pointer">
+            <IoSearchSharp size="20px" />
+          </div>
+          <div className="hidden lg:inline-block content-center rounded-full p-2 border-2 w-[40px] h-[40px] my-auto cursor-pointer">
+            <FaTelegramPlane size="20px" />
+          </div>
+          <div className="hidden lg:inline-block content-center rounded-full p-2 border-2 w-[40px] h-[40px] my-auto cursor-pointer">
+            <FaRedditAlien size="20px" />
+          </div>
+          <div className="hidden lg:inline-block content-center rounded-full p-2 border-2 w-[40px] h-[40px] my-auto cursor-pointer">
+            <FaXTwitter size="20px" />
+          </div>
         </div>
-        <div className="content-center rounded-full p-2 border-2 w-[40px] h-[40px] my-auto cursor-pointer">
-          <FaRedditAlien size="20px" />
-        </div>
-        <div className="content-center rounded-full p-2 border-2 w-[40px] h-[40px] my-auto cursor-pointer">
-          <FaXTwitter size="20px" />
-        </div>
-        <div className="content-center rounded-full p-2 border-2 w-[40px] h-[40px] my-auto cursor-pointer">
+        <div className="content-center rounded-full p-2 border-2 w-[40px] h-[40px] my-auto cursor-pointer ml-4 mr-7">
           <FiUser size="20px" />
         </div>
       </div>
