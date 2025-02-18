@@ -1,6 +1,10 @@
 import { FiHome } from "react-icons/fi";
 import { HiOutlineLightningBolt } from "react-icons/hi";
-import { IoCalendarClearOutline, IoChatboxOutline } from "react-icons/io5";
+import {
+  IoCalendarClearOutline,
+  IoChatboxOutline,
+  IoLanguageOutline,
+} from "react-icons/io5";
 import { MdOutlineWifiTethering } from "react-icons/md";
 import { TbCalendarCheck, TbTargetArrow } from "react-icons/tb";
 
@@ -67,8 +71,28 @@ const Sidebar = () => {
         <hr />
       </div>
 
-      {/* Sidebar group 3 items */}
-      <div></div>
+      {/* Sidebar language control group */}
+      <div className="border-[1px] rounded-xl">
+        <div className="h-12 rounded-xl cursor-pointer content-center p-4 gap-5 flex flex-row items-center">
+          <div>
+            <IoLanguageOutline size="20px" />
+          </div>
+          <span>EN Title</span>
+          <button className="w-10 h-[25px] uppercase border-[1px] rounded-2xl text-xs align-middle ml-auto mr-0">
+            off
+          </button>
+        </div>
+        <hr />
+        <div className="h-12 rounded-xl cursor-pointer content-center p-4 gap-5 flex flex-row items-center">
+          <div>
+            <IoLanguageOutline size="20px" />
+          </div>
+          <span>Romanji</span>
+          <button className="w-10 h-[25px] uppercase border-[1px] rounded-2xl text-xs align-middle ml-auto mr-0">
+            on
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
