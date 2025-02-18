@@ -1,0 +1,76 @@
+import { FiHome } from "react-icons/fi";
+import { HiOutlineLightningBolt } from "react-icons/hi";
+import { IoCalendarClearOutline, IoChatboxOutline } from "react-icons/io5";
+import { MdOutlineWifiTethering } from "react-icons/md";
+import { TbCalendarCheck, TbTargetArrow } from "react-icons/tb";
+
+const Sidebar = () => {
+  return (
+    <div className="bg-slate-600 w-64 h-screen relative left-0 top-0 border-r-2 border-white z-10 p-6">
+      {/* Sidebar group 1 items */}
+      <div className="flex flex-col gap-4">
+        <div className="hover:bg-slate-800 h-12 rounded-xl cursor-pointer content-center p-4 gap-5 flex flex-row items-center">
+          <div>
+            <FiHome size="20px" />
+          </div>
+          <span>Home</span>
+        </div>
+        <div className="hover:bg-slate-800 h-12 rounded-xl cursor-pointer content-center p-4 gap-5 flex flex-row items-center">
+          <div>
+            <HiOutlineLightningBolt size="20px" />
+          </div>
+          <span>Newsfeed</span>
+        </div>
+        <div className="hover:bg-slate-800 h-12 rounded-xl cursor-pointer content-center p-4 gap-5 flex flex-row items-center">
+          <div>
+            <IoCalendarClearOutline size="20px" />
+          </div>
+          <span>New Releases</span>
+        </div>
+        <div className="hover:bg-slate-800 h-12 rounded-xl cursor-pointer content-center p-4 gap-5 flex flex-row items-center">
+          <div>
+            <TbTargetArrow size="20px" />
+          </div>
+          <span>Most Popular</span>
+        </div>
+      </div>
+
+      {/* Horizontal separator */}
+      <div className="my-6">
+        <hr />
+      </div>
+
+      {/* Sidebar group items 2 */}
+      <div className="flex flex-col gap-4">
+        <div className="hover:bg-slate-800 h-12 rounded-xl cursor-pointer content-center p-4 gap-5 flex flex-row items-center">
+          <div>
+            <MdOutlineWifiTethering size="20px" />
+          </div>
+          <span>Recommendations</span>
+        </div>
+        <div className="hover:bg-slate-800 h-12 rounded-xl cursor-pointer content-center p-4 gap-5 flex flex-row items-center">
+          <div>
+            <TbCalendarCheck size="20px" />
+          </div>
+          <span>Schedule</span>
+        </div>
+        <div className="hover:bg-slate-800 h-12 rounded-xl cursor-pointer content-center p-4 gap-5 flex flex-row items-center">
+          <div>
+            <IoChatboxOutline size="20px" />
+          </div>
+          <span>Community</span>
+        </div>
+      </div>
+
+      {/* Horizontal separator */}
+      <div className="my-6">
+        <hr />
+      </div>
+
+      {/* Sidebar group 3 items */}
+      <div></div>
+    </div>
+  );
+};
+
+export default Sidebar;

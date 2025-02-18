@@ -7,7 +7,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
   return (
-    <nav className="bg-slate-800 h-17 md:h-20 flex justify-between">
+    <nav className="bg-slate-500 h-17 md:h-20 flex justify-between z-20 relative top-0">
       <div className="flex gap-24 mx-7 w-[50%]">
         <div className="flex gap-4">
           <div className="lg:hidden content-center rounded-full cursor-pointer">
