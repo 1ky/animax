@@ -10,7 +10,7 @@ import { TbCalendarCheck, TbTargetArrow } from "react-icons/tb";
 
 const Sidebar = () => {
   return (
-    <div className="bg-slate-600 w-64 h-screen relative left-0 top-0 border-r-2 border-white z-10 p-6">
+    <div className="hidden sm:inline-block bg-slate-600 w-64 h-screen relative left-0 top-0 border-r-2 border-white z-10 p-6">
       {/* Sidebar group 1 items */}
       <div className="flex flex-col gap-4">
         <div className="hover:bg-slate-800 h-12 rounded-xl cursor-pointer content-center p-4 gap-5 flex flex-row items-center">
@@ -78,7 +78,7 @@ const Sidebar = () => {
             <IoLanguageOutline size="20px" />
           </div>
           <span>EN Title</span>
-          <button className="w-10 h-[25px] uppercase border-[1px] rounded-2xl text-xs align-middle ml-auto mr-0">
+          <button className="w-10 h-[25px] uppercase border-[1px] rounded-2xl text-xs align-middle ml-auto mr-0 cursor-pointer">
             off
           </button>
         </div>
@@ -88,7 +88,7 @@ const Sidebar = () => {
             <IoLanguageOutline size="20px" />
           </div>
           <span>Romanji</span>
-          <button className="w-10 h-[25px] uppercase border-[1px] rounded-2xl text-xs align-middle ml-auto mr-0">
+          <button className="w-10 h-[25px] uppercase border-[1px] rounded-2xl text-xs align-middle ml-auto mr-0 cursor-pointer">
             on
           </button>
         </div>

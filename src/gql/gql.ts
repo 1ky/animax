@@ -14,10 +14,10 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Learn more about it here: https://the-guild.dev/graphql/codegen/plugins/presets/preset-client#reducing-bundle-size
  */
 type Documents = {
-    "\n  query AnimeTitle {\n    Media(type: ANIME) {\n      title {\n        english\n      }\n    }\n  }\n": typeof types.AnimeTitleDocument,
+    "\n  query Page(\n    $page: Int\n    $perPage: Int\n    $type: MediaType\n    $statusIn: [MediaStatus]\n  ) {\n    Page(page: $page, perPage: $perPage) {\n      media(type: $type, status_in: $statusIn) {\n        id\n        genres\n        coverImage {\n          medium\n          large\n          extraLarge\n        }\n        title {\n          english\n          native\n          romaji\n        }\n        status\n        description\n      }\n    }\n  }\n": typeof types.PageDocument,
 };
 const documents: Documents = {
-    "\n  query AnimeTitle {\n    Media(type: ANIME) {\n      title {\n        english\n      }\n    }\n  }\n": types.AnimeTitleDocument,
+    "\n  query Page(\n    $page: Int\n    $perPage: Int\n    $type: MediaType\n    $statusIn: [MediaStatus]\n  ) {\n    Page(page: $page, perPage: $perPage) {\n      media(type: $type, status_in: $statusIn) {\n        id\n        genres\n        coverImage {\n          medium\n          large\n          extraLarge\n        }\n        title {\n          english\n          native\n          romaji\n        }\n        status\n        description\n      }\n    }\n  }\n": types.PageDocument,
 };
 
 /**
@@ -37,7 +37,7 @@ export function graphql(source: string): unknown;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  query AnimeTitle {\n    Media(type: ANIME) {\n      title {\n        english\n      }\n    }\n  }\n"): (typeof documents)["\n  query AnimeTitle {\n    Media(type: ANIME) {\n      title {\n        english\n      }\n    }\n  }\n"];
+export function graphql(source: "\n  query Page(\n    $page: Int\n    $perPage: Int\n    $type: MediaType\n    $statusIn: [MediaStatus]\n  ) {\n    Page(page: $page, perPage: $perPage) {\n      media(type: $type, status_in: $statusIn) {\n        id\n        genres\n        coverImage {\n          medium\n          large\n          extraLarge\n        }\n        title {\n          english\n          native\n          romaji\n        }\n        status\n        description\n      }\n    }\n  }\n"): (typeof documents)["\n  query Page(\n    $page: Int\n    $perPage: Int\n    $type: MediaType\n    $statusIn: [MediaStatus]\n  ) {\n    Page(page: $page, perPage: $perPage) {\n      media(type: $type, status_in: $statusIn) {\n        id\n        genres\n        coverImage {\n          medium\n          large\n          extraLarge\n        }\n        title {\n          english\n          native\n          romaji\n        }\n        status\n        description\n      }\n    }\n  }\n"];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};
