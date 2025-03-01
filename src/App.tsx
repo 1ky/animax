@@ -1,17 +1,8 @@
-import Homepage from "./components/Homepage";
-import Navbar from "./components/Navbar";
-import Sidebar from "./components/Sidebar";
+import { RouterProvider } from "react-router-dom";
+import router from "./Routes";
 
 function App() {
-  return (
-    <>
-      <Navbar />
-      <div className="flex bg-slate-600">
-        <Sidebar />
-        <Homepage />
-      </div>
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
