@@ -1,50 +1,12 @@
-import { useQuery } from "urql";
-import { graphql } from "../gql";
-import { PageQuery } from "../gql/graphql";
 import AnimeCard from "./AnimeCard";
 import Carousel from "./Carousel";
 import { useNavigate } from "react-router-dom";
-
-const animePageQuery = graphql(`
-  query Page(
-    $page: Int
-    $perPage: Int
-    $type: MediaType
-    $statusIn: [MediaStatus]
-  ) {
-    Page(page: $page, perPage: $perPage) {
-      media(type: $type, status_in: $statusIn) {
-        id
-        genres
-        coverImage {
-          medium
-          large
-          extraLarge
-        }
-        title {
-          english
-          native
-          romaji
-        }
-        status
-        description
-      }
-    }
-  }
-`);
+import useAnimePageQuery from "../hooks/useAnimePageQuery";
 
 const Homepage = () => {
   const navigate = useNavigate();
 
-  const [{ data, fetching, error }] = useQuery<PageQuery>({
-    query: animePageQuery,
-    variables: {
-      page: 2,
-      perPage: 20,
-      type: "ANIME",
-      statusIn: "RELEASING",
-    },
-  });
+  const { data, fetching, error } = useAnimePageQuery();
 
   if (fetching) return <p>Loading...</p>;
   if (error) return <p>Oh no... {error.message}</p>;

@@ -14,9 +14,11 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Learn more about it here: https://the-guild.dev/graphql/codegen/plugins/presets/preset-client#reducing-bundle-size
  */
 type Documents = {
+    "\n  query AnimeDetails($mediaId: Int) {\n    Media(id: $mediaId) {\n      bannerImage\n      averageScore\n      coverImage {\n        large\n        extraLarge\n      }\n      description\n      episodes\n      endDate {\n        year\n        month\n        day\n      }\n      format\n      genres\n      id\n      popularity\n      startDate {\n        year\n        month\n        day\n      }\n      status\n      title {\n        english\n        romaji\n        native\n      }\n      type\n    }\n  }\n": typeof types.AnimeDetailsDocument,
     "\n  query Page(\n    $page: Int\n    $perPage: Int\n    $type: MediaType\n    $statusIn: [MediaStatus]\n  ) {\n    Page(page: $page, perPage: $perPage) {\n      media(type: $type, status_in: $statusIn) {\n        id\n        genres\n        coverImage {\n          medium\n          large\n          extraLarge\n        }\n        title {\n          english\n          native\n          romaji\n        }\n        status\n        description\n      }\n    }\n  }\n": typeof types.PageDocument,
 };
 const documents: Documents = {
+    "\n  query AnimeDetails($mediaId: Int) {\n    Media(id: $mediaId) {\n      bannerImage\n      averageScore\n      coverImage {\n        large\n        extraLarge\n      }\n      description\n      episodes\n      endDate {\n        year\n        month\n        day\n      }\n      format\n      genres\n      id\n      popularity\n      startDate {\n        year\n        month\n        day\n      }\n      status\n      title {\n        english\n        romaji\n        native\n      }\n      type\n    }\n  }\n": types.AnimeDetailsDocument,
     "\n  query Page(\n    $page: Int\n    $perPage: Int\n    $type: MediaType\n    $statusIn: [MediaStatus]\n  ) {\n    Page(page: $page, perPage: $perPage) {\n      media(type: $type, status_in: $statusIn) {\n        id\n        genres\n        coverImage {\n          medium\n          large\n          extraLarge\n        }\n        title {\n          english\n          native\n          romaji\n        }\n        status\n        description\n      }\n    }\n  }\n": types.PageDocument,
 };
 
@@ -34,6 +36,10 @@ const documents: Documents = {
  */
 export function graphql(source: string): unknown;
 
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "\n  query AnimeDetails($mediaId: Int) {\n    Media(id: $mediaId) {\n      bannerImage\n      averageScore\n      coverImage {\n        large\n        extraLarge\n      }\n      description\n      episodes\n      endDate {\n        year\n        month\n        day\n      }\n      format\n      genres\n      id\n      popularity\n      startDate {\n        year\n        month\n        day\n      }\n      status\n      title {\n        english\n        romaji\n        native\n      }\n      type\n    }\n  }\n"): (typeof documents)["\n  query AnimeDetails($mediaId: Int) {\n    Media(id: $mediaId) {\n      bannerImage\n      averageScore\n      coverImage {\n        large\n        extraLarge\n      }\n      description\n      episodes\n      endDate {\n        year\n        month\n        day\n      }\n      format\n      genres\n      id\n      popularity\n      startDate {\n        year\n        month\n        day\n      }\n      status\n      title {\n        english\n        romaji\n        native\n      }\n      type\n    }\n  }\n"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
