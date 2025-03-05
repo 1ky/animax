@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from "./pages/Layout";
 import Homepage from "./components/Homepage";
 import AnimeDetailPage from "./pages/AnimeDetailPage";
+import AnimeGenrePage from "./pages/AnimeGenrePage";
 
 const router = createBrowserRouter([
   {
@@ -10,6 +11,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Homepage /> },
       { path: "/anime/:id", element: <AnimeDetailPage /> },
+      { path: "/genres", element: <AnimeGenrePage /> },
     ],
   },
 ]);

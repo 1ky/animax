@@ -2,6 +2,7 @@ import AnimeCard from "./AnimeCard";
 import Carousel from "./Carousel";
 import { useNavigate } from "react-router-dom";
 import useAnimePageQuery from "../hooks/useAnimePageQuery";
+import GenreButtons from "./GenreButtons";
 
 const Homepage = () => {
   const navigate = useNavigate();
@@ -16,6 +17,7 @@ const Homepage = () => {
       <div className="flex justify-center">
         <Carousel />
       </div>
+      <GenreButtons />
       <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-2 p-6 w-full min-w-[300px] cursor-pointer">
         {data?.Page?.media?.map((anime) => (
           <div
