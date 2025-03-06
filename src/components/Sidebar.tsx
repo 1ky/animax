@@ -7,11 +7,9 @@ import {
 } from "react-icons/io5";
 import { MdOutlineWifiTethering } from "react-icons/md";
 import { TbCalendarCheck, TbTargetArrow } from "react-icons/tb";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
-  const navigate = useNavigate();
-
   return (
     <div className="hidden sm:inline-block bg-slate-600 w-64 h-screen relative left-0 top-0 border-r-2 border-white z-10 p-6">
       {/* Sidebar group 1 items */}
@@ -20,7 +18,7 @@ const Sidebar = () => {
           <div>
             <FiHome size="20px" />
           </div>
-          <span onClick={() => navigate("/")}>Home</span>
+          <Link to="/">Home</Link>
         </div>
         <div className="hover:bg-slate-800 h-12 rounded-xl cursor-pointer content-center p-4 gap-5 flex flex-row items-center">
           <div>
