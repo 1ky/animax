@@ -16,7 +16,7 @@ const AnimeGenrePage = () => {
       <GenreButtons />
       <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-2 p-6 w-full min-w-[300px] cursor-pointer">
         {data?.Page?.media?.map((anime) => (
-          <div>
+          <div key={anime?.id}>
             <AnimeCard
               image={anime?.coverImage?.large || ""}
               title={anime?.title?.english || anime?.title?.romaji || ""}

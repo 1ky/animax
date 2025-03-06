@@ -11,7 +11,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Homepage /> },
       { path: "/anime/:id", element: <AnimeDetailPage /> },
-      { path: "/genres", element: <AnimeGenrePage /> },
+      { path: "/genres/:genre", element: <AnimeGenrePage /> },
     ],
   },
 ]);
