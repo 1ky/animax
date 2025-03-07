@@ -34,11 +34,18 @@ const animeGenreQuery = graphql(`
         status
         description
       }
+      pageInfo {
+        total
+        perPage
+        currentPage
+        lastPage
+        hasNextPage
+      }
     }
   }
 `);
 
-const useAnimeGenreQuery = (genre: string) => {
+const useAnimeGenreQuery = (genre: string, currentPage: number) => {
   const adult = useAdultStore((state) => state.adult);
   const exclude = adult ? null : "Hentai";
 
@@ -47,7 +54,7 @@ const useAnimeGenreQuery = (genre: string) => {
     variables: {
       genreIn: genre,
       genreNotIn: exclude,
-      page: 1,
+      page: currentPage,
       perPage: 20,
       type: "ANIME",
       statusIn: "RELEASING",

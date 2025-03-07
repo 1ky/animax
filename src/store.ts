@@ -17,6 +17,18 @@ export const useGenreStore = create<GenreStore>((set) => ({
   },
 }));
 
+type GenrePageStore = {
+  page: number;
+  setPage: (pageNumber: number) => void;
+};
+
+export const useGenrePageStore = create<GenrePageStore>((set) => ({
+  page: 1,
+  setPage: (pageNumber) => {
+    set({ page: pageNumber });
+  },
+}));
+
 // Store for managing the optional adult content state
 type AdultStore = {
   adult: boolean;

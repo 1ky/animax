@@ -1,10 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import useAnimeGenres from "../hooks/useAnimeGenres";
-import { useGenreStore } from "../store";
+import { useGenrePageStore, useGenreStore } from "../store";
 
 const GenreButtons = () => {
   const genres = useAnimeGenres();
   const setGenre = useGenreStore((state) => state.setGenre);
+  const setPage = useGenrePageStore((state) => state.setPage);
 
   const navigate = useNavigate();
 
@@ -16,6 +17,7 @@ const GenreButtons = () => {
           value={genre}
           onClick={() => {
             setGenre(genre);
+            setPage(1);
             navigate(`/genres/${genre}`);
           }}
           className="rounded bg-gray-500 px-1 cursor-pointer"
