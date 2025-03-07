@@ -1,6 +1,7 @@
 import { useQuery } from "urql";
 import { graphql } from "../gql";
 import { AnimeGenreQuery } from "../gql/graphql";
+import { useAdultStore } from "../store";
 
 const animeGenreQuery = graphql(`
   query AnimeGenre(
@@ -38,11 +39,14 @@ const animeGenreQuery = graphql(`
 `);
 
 const useAnimeGenreQuery = (genre: string) => {
+  const adult = useAdultStore((state) => state.adult);
+  const exclude = adult ? null : "Hentai";
+
   const [{ data, fetching, error }] = useQuery<AnimeGenreQuery>({
     query: animeGenreQuery,
     variables: {
       genreIn: genre,
-      genreNotIn: null,
+      genreNotIn: exclude,
       page: 1,
       perPage: 20,
       type: "ANIME",

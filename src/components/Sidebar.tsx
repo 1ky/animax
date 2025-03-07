@@ -8,8 +8,12 @@ import {
 import { MdOutlineWifiTethering } from "react-icons/md";
 import { TbCalendarCheck, TbTargetArrow } from "react-icons/tb";
 import { Link } from "react-router-dom";
+import { useAdultStore } from "../store";
 
 const Sidebar = () => {
+  const adultSwitch = useAdultStore((state) => state.adult);
+  const setAdultSwitch = useAdultStore((state) => state.setAdult);
+
   return (
     <div className="hidden sm:inline-block bg-slate-600 w-64 h-screen relative left-0 top-0 border-r-2 border-white z-10 p-6">
       {/* Sidebar group 1 items */}
@@ -86,13 +90,16 @@ const Sidebar = () => {
           </button>
         </div>
         <hr />
-        <div className="h-12 rounded-xl cursor-pointer content-center p-4 gap-5 flex flex-row items-center">
+        <div
+          onClick={() => setAdultSwitch(!adultSwitch)}
+          className="h-12 rounded-xl cursor-pointer content-center p-4 gap-5 flex flex-row items-center"
+        >
           <div>
             <IoLanguageOutline size="20px" />
           </div>
-          <span>Romanji</span>
+          <span>Adult</span>
           <button className="w-10 h-[25px] uppercase border-[1px] rounded-2xl text-xs align-middle ml-auto mr-0 cursor-pointer">
-            on
+            {adultSwitch ? "on" : "off"}
           </button>
         </div>
       </div>
