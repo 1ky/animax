@@ -15,30 +15,30 @@ const Sidebar = () => {
   const setAdultSwitch = useAdultStore((state) => state.setAdult);
 
   return (
-    <div className="hidden sm:inline-block bg-slate-600 w-64 h-screen relative left-0 top-0 border-r-2 border-white z-10 p-6">
+    <div className="hidden sm:inline-block w-64 h-screen relative left-0 top-0 border-r-2 z-10 p-6">
       {/* Sidebar group 1 items */}
       <div className="flex flex-col gap-4">
         <Link to="/">
-          <div className="hover:bg-slate-800 h-12 rounded-xl cursor-pointer content-center p-4 gap-5 flex flex-row items-center">
+          <div className="h-12 rounded-xl cursor-pointer content-center p-4 gap-5 flex flex-row items-center">
             <div>
               <FiHome size="20px" />
             </div>
             <span>Home</span>
           </div>
         </Link>
-        <div className="hover:bg-slate-800 h-12 rounded-xl cursor-pointer content-center p-4 gap-5 flex flex-row items-center">
+        <div className="h-12 rounded-xl cursor-pointer content-center p-4 gap-5 flex flex-row items-center">
           <div>
             <HiOutlineLightningBolt size="20px" />
           </div>
           <span>Newsfeed</span>
         </div>
-        <div className="hover:bg-slate-800 h-12 rounded-xl cursor-pointer content-center p-4 gap-5 flex flex-row items-center">
+        <div className="h-12 rounded-xl cursor-pointer content-center p-4 gap-5 flex flex-row items-center">
           <div>
             <IoCalendarClearOutline size="20px" />
           </div>
           <span>New Releases</span>
         </div>
-        <div className="hover:bg-slate-800 h-12 rounded-xl cursor-pointer content-center p-4 gap-5 flex flex-row items-center">
+        <div className="h-12 rounded-xl cursor-pointer content-center p-4 gap-5 flex flex-row items-center">
           <div>
             <TbTargetArrow size="20px" />
           </div>

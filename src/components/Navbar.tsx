@@ -19,7 +19,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-slate-500 h-17 md:h-20 flex justify-between z-20 relative top-0">
+    <nav className=" h-17 md:h-20 flex justify-between z-20 relative top-0">
       <div className="flex gap-24 mx-7 w-[50%]">
         <div className="flex gap-4">
           {/* Hamburger menu icon */}
@@ -52,7 +52,7 @@ const Navbar = () => {
               placeholder="Search anime"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="border-1 rounded-full w-[100%] h-12 pl-14 placeholder:text-white content-center m-auto"
+              className="border-1 rounded-full w-[100%] h-12 pl-14 content-center m-auto"
             />
           </form>
         </div>
