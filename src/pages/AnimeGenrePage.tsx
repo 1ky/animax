@@ -11,7 +11,6 @@ const AnimeGenrePage = () => {
   const setPage = useGenrePageStore((state) => state.setPage);
   const setPrev = () => setPage(page - 1);
   const setNext = () => setPage(page + 1);
-  console.log(page);
 
   const { data, fetching, error } = useAnimeGenreQuery(genre || "", page);
 
@@ -40,6 +39,7 @@ const AnimeGenrePage = () => {
         >
           Previous
         </button>
+        <div className="rounded p-2 m-2 bg-gray-500 cursor-pointer">{page}</div>
         <button
           onClick={() => setNext()}
           disabled={data?.Page?.pageInfo?.hasNextPage === false}
