@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
-.anime-cover {
-    height: auto;
+@theme {
+    --color-primary: #357d64;
+    --color-secondary: #aecbc1;
+    --color-accent: #35407d;
 }

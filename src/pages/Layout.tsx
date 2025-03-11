@@ -8,7 +8,9 @@ const Layout = () => {
       <Navbar />
       <div className="flex">
         <Sidebar />
-        <Outlet />
+        <div className="mt-20 sm:ml-64">
+          <Outlet />
+        </div>
       </div>
     </div>
   );

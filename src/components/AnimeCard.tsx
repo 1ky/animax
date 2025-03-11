@@ -11,7 +11,7 @@ const AnimeCard = ({ image, title }: Props) => {
       <div className="group w-full h-full rounded overflow-hidden">
         <img src={image} alt={title} className="object-cover w-full h-full" />
       </div>
-      <h1 className="group text-nowrap font-semibold overflow-hidden overflow-ellipsis">
+      <h1 className="text-accent group text-nowrap font-semibold overflow-hidden overflow-ellipsis">
         {title}
       </h1>
       {/* <div className="hidden group-hover:inline-block w-full h-96 border-2 absolute z-30 bg-green-300"></div> */}

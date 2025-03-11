@@ -20,7 +20,7 @@ const GenreButtons = () => {
             setPage(1);
             navigate(`/genres/${genre}`);
           }}
-          className="rounded bg-gray-500 px-1 cursor-pointer"
+          className="rounded bg-gray-300 drop-shadow-sm px-1 cursor-pointer"
         >
           {genre}
         </button>

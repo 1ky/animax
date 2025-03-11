@@ -30,7 +30,7 @@ const Carousel = () => {
       {/* Slider component definition */}
       <div className="bg-black opacity-50 w-min rounded-full p-2 absolute bottom-8 right-8">
         <div className="flex items-center justify-center gap-2">
-          <div onClick={() => previous()}>
+          <div onClick={() => previous()} className="text-white">
             <IoChevronBackOutline size={20} />
           </div>
           {images.map((_, i) => (
@@ -40,7 +40,7 @@ const Carousel = () => {
               }`}
             />
           ))}
-          <div onClick={() => next()}>
+          <div onClick={() => next()} className="text-white">
             <IoChevronForwardOutline size={20} />
           </div>
         </div>
