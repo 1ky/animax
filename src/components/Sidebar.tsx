@@ -15,8 +15,8 @@ const Sidebar = () => {
   const setAdultSwitch = useAdultStore((state) => state.setAdult);
 
   return (
-    <div className="fixed h-full z-30 mt-20">
-      <div className="hidden sm:inline-block w-64 h-screen relative left-0 top-0 border-r-2 bg-white border-primary z-10 p-6">
+    <div className="">
+      <div className="hidden lg:inline-block w-64 relative left-0 top-0 border-r-2 bg-white border-primary z-10 p-6 mt-20">
         {/* Sidebar group 1 items */}
         <div className="flex flex-col gap-4">
           <NavLink to="/">
@@ -39,12 +39,14 @@ const Sidebar = () => {
             </div>
             <span>New Releases</span>
           </div>
-          <div className="hover:bg-secondary hover:text-primary h-12 rounded-xl cursor-pointer content-center p-4 gap-5 flex flex-row items-center">
-            <div>
-              <TbTargetArrow size="20px" />
+          <NavLink to="/popular">
+            <div className="hover:bg-secondary hover:text-primary h-12 rounded-xl cursor-pointer content-center p-4 gap-5 flex flex-row items-center">
+              <div>
+                <TbTargetArrow size="20px" />
+              </div>
+              <span>Most Popular</span>
             </div>
-            <span>Most Popular</span>
-          </div>
+          </NavLink>
         </div>
         {/* Horizontal separator */}
         <div className="my-6 text-primary">
