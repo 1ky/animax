@@ -1,18 +1,36 @@
 import AnimeCard from "../components/AnimeCard";
 import useAnimeGeneralQuery from "../hooks/useAnimeGeneralQuery";
+import { useSearchParams } from "react-router-dom";
 
 const AnimePopularPage = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const page = searchParams.get("page") || "1";
+
   const {
     data: popular,
     fetching,
     error,
   } = useAnimeGeneralQuery({
     sort: "POPULARITY_DESC",
-    page: 1,
+    page: parseInt(page || "1"),
     perPage: 40,
-    statusIn: "RELEASING",
+    statusIn: "FINISHED",
     format: "TV",
   });
+
+  const prevPage = () => {
+    if (page && parseInt(page) > 1) {
+      const newPage = parseInt(page) - 1;
+      setSearchParams({ page: newPage.toString() });
+    }
+  };
+
+  const nextPage = () => {
+    if (popular?.Page?.pageInfo?.hasNextPage && page) {
+      const newPage = parseInt(page) + 1;
+      setSearchParams({ page: newPage.toString() });
+    }
+  };
 
   if (fetching) return <p>Loading...</p>;
   if (error) return <p>Oh no... {error.message}</p>;
@@ -27,7 +45,6 @@ const AnimePopularPage = () => {
           <div
             key={anime?.id}
             className="flex flex-nowrap max-w-[250px] h-[90%]"
-            // onClick={() => navigate(`/anime/${anime?.id}`)}
           >
             <AnimeCard
               image={anime?.coverImage?.large || ""}
@@ -35,6 +52,24 @@ const AnimePopularPage = () => {
             />
           </div>
         ))}
+      </div>
+      <div className="flex justify-center pb-4">
+        <button
+          onClick={() => {
+            prevPage();
+          }}
+          className="bg-secondary m-2 p-2 rounded cursor-pointer"
+        >
+          Previous
+        </button>
+        <button
+          onClick={() => {
+            nextPage();
+          }}
+          className="bg-secondary m-2 p-2 rounded cursor-pointer"
+        >
+          Next
+        </button>
       </div>
     </div>
   );
