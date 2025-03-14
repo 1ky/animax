@@ -10,7 +10,7 @@ const Layout = () => {
         <div className="relative">
           <Sidebar />
         </div>
-        <div className="flex justify-center w-full p-6 relative h-dvh overflow-scroll">
+        <div className="flex justify-center w-full min-w-[375px] p-6 relative h-dvh overflow-scroll">
           <Outlet />
         </div>
       </div>

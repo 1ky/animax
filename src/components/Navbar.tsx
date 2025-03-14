@@ -5,10 +5,14 @@ import { IoSearchSharp } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
+import { useOpenStore } from "../store";
 
 const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const toggleOpen = useOpenStore((state) => state.toggleOpen);
+
   const navigate = useNavigate();
+
   const [, setSearchParams] = useSearchParams();
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -23,7 +27,10 @@ const Navbar = () => {
         <div className="flex gap-24 mx-7 w-[50%]">
           <div className="flex gap-4">
             {/* Hamburger menu icon */}
-            <div className="lg:hidden content-center rounded-full cursor-pointer">
+            <div
+              onClick={() => toggleOpen()}
+              className="content-center rounded-full cursor-pointer"
+            >
               <GiHamburgerMenu size="24px" />
             </div>
             {/* Website title */}

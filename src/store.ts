@@ -1,5 +1,16 @@
 import { create } from "zustand";
 
+// Store or managing the sidebar open/closed state
+type OpenStore = {
+  open: boolean;
+  toggleOpen: () => void;
+};
+
+export const useOpenStore = create<OpenStore>((set) => ({
+  open: true,
+  toggleOpen: () => set((state) => ({ open: !state.open })),
+}));
+
 // Store for managing selected genre state
 type GenreStore = {
   genre: string;

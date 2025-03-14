@@ -8,17 +8,23 @@ import {
 import { MdOutlineWifiTethering } from "react-icons/md";
 import { TbCalendarCheck, TbTargetArrow } from "react-icons/tb";
 import { NavLink } from "react-router-dom";
-import { useAdultStore } from "../store";
+import { useAdultStore, useOpenStore } from "../store";
 
 const Sidebar = () => {
   const adultSwitch = useAdultStore((state) => state.adult);
   const setAdultSwitch = useAdultStore((state) => state.setAdult);
+  const open = useOpenStore((state) => state.open);
 
   return (
     <div className="">
-      <div className="hidden lg:inline-block w-64 relative left-0 top-0 border-r-2 bg-white border-primary z-10 p-6 mt-20">
+      <div
+        className={`w-64 relative left-0 top-0 border-r-2 bg-white border-primary z-10 p-6 mt-20 ${
+          open ? "inline-block" : "hidden"
+        }`}
+      >
         {/* Sidebar group 1 items */}
         <div className="flex flex-col gap-4">
+          {/* Home */}
           <NavLink to="/">
             <div className="hover:bg-secondary hover:text-primary h-12 rounded-xl cursor-pointer content-center p-4 gap-5 flex flex-row items-center">
               <div>
@@ -27,12 +33,17 @@ const Sidebar = () => {
               <span>Home</span>
             </div>
           </NavLink>
-          <div className="hover:bg-secondary hover:text-primary h-12 rounded-xl cursor-pointer content-center p-4 gap-5 flex flex-row items-center">
-            <div>
-              <HiOutlineLightningBolt size="20px" />
+
+          {/* Genres */}
+          <NavLink to="/genres">
+            <div className="hover:bg-secondary hover:text-primary h-12 rounded-xl cursor-pointer content-center p-4 gap-5 flex flex-row items-center">
+              <div>
+                <HiOutlineLightningBolt size="20px" />
+              </div>
+              <span>Genres</span>
             </div>
-            <span>Newsfeed</span>
-          </div>
+          </NavLink>
+
           <div className="hover:bg-secondary hover:text-primary h-12 rounded-xl cursor-pointer content-center p-4 gap-5 flex flex-row items-center">
             <div>
               <IoCalendarClearOutline size="20px" />
