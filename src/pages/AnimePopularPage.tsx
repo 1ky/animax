@@ -37,16 +37,17 @@ const AnimePopularPage = () => {
 
   return (
     <div className="mt-20">
-      <h1 className="text-primary font-bold text-4xl mb-4 ">
+      <h1 className="text-primary mb-4 text-4xl font-bold">
         Most Popular TV Series
       </h1>
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 place-content-around gap-10 min-w-[300px] cursor-pointer">
+      <div className="grid min-w-[300px] grid-cols-2 place-content-around gap-10 md:grid-cols-4 lg:grid-cols-5">
         {popular?.Page?.media?.map((anime) => (
           <div
             key={anime?.id}
-            className="flex flex-nowrap max-w-[250px] h-[90%]"
+            className="flex h-[90%] max-w-[250px] flex-nowrap"
           >
             <AnimeCard
+              id={anime?.id}
               image={anime?.coverImage?.large || ""}
               title={anime?.title?.english || anime?.title?.romaji || ""}
             />
@@ -58,7 +59,7 @@ const AnimePopularPage = () => {
           onClick={() => {
             prevPage();
           }}
-          className="bg-secondary m-2 p-2 rounded cursor-pointer"
+          className="bg-secondary m-2 cursor-pointer rounded p-2"
         >
           Previous
         </button>
@@ -66,7 +67,7 @@ const AnimePopularPage = () => {
           onClick={() => {
             nextPage();
           }}
-          className="bg-secondary m-2 p-2 rounded cursor-pointer"
+          className="bg-secondary m-2 cursor-pointer rounded p-2"
         >
           Next
         </button>

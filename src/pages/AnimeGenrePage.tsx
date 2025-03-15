@@ -12,8 +12,9 @@ const AnimeGenrePage = () => {
     genreIn: genre,
     page: parseInt(page || "1"),
     perPage: 40,
-    statusIn: "FINISHED",
-    format: "TV",
+    type: "ANIME",
+    statusIn: undefined,
+    format: undefined,
   });
 
   const prevPage = () => {
@@ -45,6 +46,7 @@ const AnimeGenrePage = () => {
             className="flex h-[90%] max-w-[250px] flex-nowrap"
           >
             <AnimeCard
+              id={anime?.id}
               image={anime?.coverImage?.large || ""}
               title={anime?.title?.english || anime?.title?.romaji || ""}
             />

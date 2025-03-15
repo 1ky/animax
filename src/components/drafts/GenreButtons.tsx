@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import useAnimeGenres from "../hooks/useAnimeGenres";
-import { useGenrePageStore, useGenreStore } from "../store";
+import useAnimeGenres from "../../hooks/useAnimeGenres";
+import { useGenrePageStore, useGenreStore } from "../../store";
 
 const GenreButtons = () => {
   const genres = useAnimeGenres();

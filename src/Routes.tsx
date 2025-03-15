@@ -3,16 +3,16 @@ import Layout from "./pages/Layout";
 import AnimeDetailPage from "./pages/AnimeDetailPage";
 import AnimeGenrePage from "./pages/AnimeGenrePage";
 import AnimeSearchPage from "./pages/AnimeSearchPage";
-import Homepage from "./components/Homepage";
 import AnimePopularPage from "./pages/AnimePopularPage";
 import GenreSelectPage from "./pages/GenreSelectPage";
+import LandingPage from "./pages/LandingPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
     children: [
-      { index: true, element: <Homepage /> },
+      { index: true, element: <LandingPage /> },
       { path: "/anime/:id", element: <AnimeDetailPage /> },
       {
         path: "/genres",
