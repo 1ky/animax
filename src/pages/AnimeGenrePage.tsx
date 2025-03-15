@@ -1,29 +1,49 @@
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import AnimeCard from "../components/AnimeCard";
-import GenreButtons from "../components/GenreButtons";
-import useAnimeGenreQuery from "../hooks/useAnimeGenreQuery";
-import { useGenrePageStore } from "../store";
+import useAnimeGeneralQuery from "../hooks/useAnimeGeneralQuery";
 
 const AnimeGenrePage = () => {
   const { genre } = useParams();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const page = searchParams.get("page") || "1";
 
-  const page = useGenrePageStore((state) => state.page);
-  const setPage = useGenrePageStore((state) => state.setPage);
-  const setPrev = () => setPage(page - 1);
-  const setNext = () => setPage(page + 1);
+  const { data, fetching, error } = useAnimeGeneralQuery({
+    sort: "POPULARITY_DESC",
+    genreIn: genre,
+    page: parseInt(page || "1"),
+    perPage: 40,
+    statusIn: "FINISHED",
+    format: "TV",
+  });
 
-  const { data, fetching, error } = useAnimeGenreQuery(genre || "", page);
+  const prevPage = () => {
+    if (page && parseInt(page) > 1) {
+      const newPage = parseInt(page) - 1;
+      setSearchParams({ page: newPage.toString() });
+    }
+  };
+
+  const nextPage = () => {
+    if (data?.Page?.pageInfo?.hasNextPage && page) {
+      const newPage = parseInt(page) + 1;
+      setSearchParams({ page: newPage.toString() });
+    }
+  };
 
   if (fetching) return <p>Loading...</p>;
   if (error) return <p>Oh no... {error.message}</p>;
 
   return (
-    <div>
-      <h1>{genre} Anime</h1>
-      <GenreButtons />
-      <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-2 p-6 w-full min-w-[300px] cursor-pointer">
+    <div className="mt-20">
+      <h1 className="text-primary mb-4 text-4xl font-bold">
+        {genre} TV Series
+      </h1>
+      <div className="grid min-w-[300px] cursor-pointer grid-cols-2 place-content-around gap-10 md:grid-cols-4 lg:grid-cols-5">
         {data?.Page?.media?.map((anime) => (
-          <div key={anime?.id}>
+          <div
+            key={anime?.id}
+            className="flex h-[90%] max-w-[250px] flex-nowrap"
+          >
             <AnimeCard
               image={anime?.coverImage?.large || ""}
               title={anime?.title?.english || anime?.title?.romaji || ""}
@@ -31,19 +51,20 @@ const AnimeGenrePage = () => {
           </div>
         ))}
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center pb-4">
         <button
-          onClick={() => setPrev()}
-          disabled={data?.Page?.pageInfo?.currentPage === 1}
-          className="p-2 rounded m-2 bg-gray-500 cursor-pointer"
+          onClick={() => {
+            prevPage();
+          }}
+          className="bg-secondary m-2 cursor-pointer rounded p-2"
         >
           Previous
         </button>
-        <div className="rounded p-2 m-2 bg-gray-500 cursor-pointer">{page}</div>
         <button
-          onClick={() => setNext()}
-          disabled={data?.Page?.pageInfo?.hasNextPage === false}
-          className="p-2 rounded m-2 bg-gray-500 cursor-pointer"
+          onClick={() => {
+            nextPage();
+          }}
+          className="bg-secondary m-2 cursor-pointer rounded p-2"
         >
           Next
         </button>

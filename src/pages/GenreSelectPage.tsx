@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import useGetAnimeGenres from "../hooks/useAnimeGenres";
 import { useGenreStore } from "../store";
+import GenreSelector from "../components/GenreSelector";
 
 const GenreSelectPage = () => {
   const genres = useGetAnimeGenres();
@@ -10,19 +11,17 @@ const GenreSelectPage = () => {
 
   return (
     <div className="mt-20">
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 w-full gap-5">
+      <div className="grid w-full grid-cols-2 gap-5 md:grid-cols-4 lg:grid-cols-5">
         {genres.map((genre) => (
           <div
-            key={genre}
+            key={genre.genre}
             onClick={() => {
-              setGenre(genre);
-              navigate(`/genres/${genre}`);
+              setGenre(genre.genre);
+              navigate(`/genres/${genre.genre}`);
             }}
-            className="flex py-20 px-5 bg-secondary justify-center items-center rounded-2xl cursor-pointer overflow-ellipsis overflow-hidden"
+            className="h-full w-full"
           >
-            <h1 className="text-2xl font-bold text-primary text-nowrap overflow-ellipsis">
-              {genre}
-            </h1>
+            <GenreSelector title={genre.genre} image={genre.image} />
           </div>
         ))}
       </div>

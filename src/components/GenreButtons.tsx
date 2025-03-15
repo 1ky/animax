@@ -13,16 +13,16 @@ const GenreButtons = () => {
     <div className="flex flex-wrap gap-2 p-6">
       {genres.map((genre) => (
         <button
-          key={genre}
-          value={genre}
+          key={genre.genre}
+          value={genre.genre}
           onClick={() => {
-            setGenre(genre);
+            setGenre(genre.genre);
             setPage(1);
             navigate(`/genres/${genre}`);
           }}
-          className="rounded bg-gray-300 drop-shadow-sm px-1 cursor-pointer"
+          className="cursor-pointer rounded bg-gray-300 px-1 drop-shadow-sm"
         >
-          {genre}
+          {genre.genre}
         </button>
       ))}
     </div>
