@@ -39,7 +39,7 @@ const AnimeGenrePage = () => {
       <h1 className="text-primary mb-4 text-4xl font-bold">
         {genre} TV Series
       </h1>
-      <div className="grid min-w-[300px] cursor-pointer grid-cols-2 place-content-around gap-10 md:grid-cols-4 lg:grid-cols-5">
+      <div className="grid min-w-[300px] grid-cols-2 place-content-around gap-10 md:grid-cols-4 lg:grid-cols-5">
         {data?.Page?.media?.map((anime) => (
           <div
             key={anime?.id}
