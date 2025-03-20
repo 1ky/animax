@@ -8,7 +8,7 @@ interface Props {
   page?: number;
   perPage?: number;
   type?: "ANIME";
-  statusIn?: "FINISHED" | "RELEASING" | "NOT_YET_RELEASED";
+  statusIn?: string[];
   genreIn?: string;
   genreNotIn?: string;
   sort?: string;

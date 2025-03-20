@@ -1,8 +1,8 @@
-import AnimeCard from "../components/AnimeCard";
-import useAnimeGeneralQuery from "../hooks/useAnimeGeneralQuery";
 import { useSearchParams } from "react-router-dom";
+import useAnimeGeneralQuery from "../hooks/useAnimeGeneralQuery";
+import AnimeCard from "../components/AnimeCard";
 
-const AnimePopularPage = () => {
+const AnimeUpcomingPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const page = searchParams.get("page") || "1";
 
@@ -14,7 +14,7 @@ const AnimePopularPage = () => {
     sort: "POPULARITY_DESC",
     page: parseInt(page || "1"),
     perPage: 40,
-    statusIn: ["FINISHED", "HIATUS", "RELEASING"],
+    statusIn: ["RELEASING", "NOT_YET_RELEASED"],
     format: "TV",
   });
 
@@ -38,7 +38,7 @@ const AnimePopularPage = () => {
   return (
     <div className="mt-20">
       <h1 className="text-primary mb-4 text-4xl font-bold">
-        Most Popular TV Series
+        Releasing and Upcoming Anime
       </h1>
       <div className="grid min-w-[300px] grid-cols-2 place-content-around gap-10 md:grid-cols-4 lg:grid-cols-5">
         {popular?.Page?.media?.map((anime) => (
@@ -63,6 +63,7 @@ const AnimePopularPage = () => {
         >
           Previous
         </button>
+
         <button
           onClick={() => {
             nextPage();
@@ -76,4 +77,4 @@ const AnimePopularPage = () => {
   );
 };
 
-export default AnimePopularPage;
+export default AnimeUpcomingPage;

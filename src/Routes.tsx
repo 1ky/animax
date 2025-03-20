@@ -6,6 +6,7 @@ import AnimeSearchPage from "./pages/AnimeSearchPage";
 import AnimePopularPage from "./pages/AnimePopularPage";
 import GenreSelectPage from "./pages/GenreSelectPage";
 import LandingPage from "./pages/LandingPage";
+import AnimeUpcomingPage from "./pages/AnimeUpcomingPage";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
           { path: "/genres/:genre", element: <AnimeGenrePage /> },
         ],
       },
+      { path: "/upcoming", element: <AnimeUpcomingPage /> },
       { path: "/popular", element: <AnimePopularPage /> },
       { path: "/search", element: <AnimeSearchPage /> },
     ],
