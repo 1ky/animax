@@ -18,7 +18,7 @@ const Sidebar = () => {
   return (
     <div className="">
       <div
-        className={`border-primary relative top-0 left-0 z-10 mt-20 w-64 border-r-2 bg-white p-6 ${
+        className={`bg-complement relative top-0 left-0 z-10 mt-20 w-64 border-r-2 p-6 text-white ${
           open ? "inline-block" : "hidden"
         }`}
       >
@@ -26,7 +26,7 @@ const Sidebar = () => {
         <div className="flex flex-col gap-4">
           {/* Home */}
           <NavLink to="/">
-            <div className="hover:bg-secondary hover:text-primary flex h-12 cursor-pointer flex-row content-center items-center gap-5 rounded-xl p-4">
+            <div className="hover:bg-highlight hover:text-primary flex h-12 cursor-pointer flex-row content-center items-center gap-5 rounded-xl p-4">
               <div>
                 <FiHome size="20px" />
               </div>
@@ -36,7 +36,7 @@ const Sidebar = () => {
 
           {/* Genres */}
           <NavLink to="/genres">
-            <div className="hover:bg-secondary hover:text-primary flex h-12 cursor-pointer flex-row content-center items-center gap-5 rounded-xl p-4">
+            <div className="hover:bg-highlight hover:text-primary flex h-12 cursor-pointer flex-row content-center items-center gap-5 rounded-xl p-4">
               <div>
                 <HiOutlineLightningBolt size="20px" />
               </div>
@@ -46,7 +46,7 @@ const Sidebar = () => {
 
           {/* New Releases */}
           <NavLink to="/upcoming">
-            <div className="hover:bg-secondary hover:text-primary flex h-12 cursor-pointer flex-row content-center items-center gap-5 rounded-xl p-4">
+            <div className="hover:bg-highlight hover:text-primary flex h-12 cursor-pointer flex-row content-center items-center gap-5 rounded-xl p-4">
               <div>
                 <IoCalendarClearOutline size="20px" />
               </div>
@@ -56,7 +56,7 @@ const Sidebar = () => {
 
           {/* Popular Anime */}
           <NavLink to="/popular">
-            <div className="hover:bg-secondary hover:text-primary flex h-12 cursor-pointer flex-row content-center items-center gap-5 rounded-xl p-4">
+            <div className="hover:bg-highlight hover:text-primary flex h-12 cursor-pointer flex-row content-center items-center gap-5 rounded-xl p-4">
               <div>
                 <TbTargetArrow size="20px" />
               </div>
@@ -65,24 +65,24 @@ const Sidebar = () => {
           </NavLink>
         </div>
         {/* Horizontal separator */}
-        <div className="text-primary my-6">
+        <div className="my-6 text-white">
           <hr />
         </div>
         {/* Sidebar group items 2 */}
         <div className="flex flex-col gap-4">
-          <div className="hover:bg-secondary hover:text-primary flex h-12 cursor-pointer flex-row content-center items-center gap-5 rounded-xl p-4">
+          <div className="hover:bg-highlight hover:text-primary flex h-12 cursor-pointer flex-row content-center items-center gap-5 rounded-xl p-4">
             <div>
               <MdOutlineWifiTethering size="20px" />
             </div>
             <span>Recommendations</span>
           </div>
-          <div className="hover:bg-secondary hover:text-primary flex h-12 cursor-pointer flex-row content-center items-center gap-5 rounded-xl p-4">
+          <div className="hover:bg-highlight hover:text-primary flex h-12 cursor-pointer flex-row content-center items-center gap-5 rounded-xl p-4">
             <div>
               <TbCalendarCheck size="20px" />
             </div>
             <span>Schedule</span>
           </div>
-          <div className="hover:bg-secondary hover:text-primary flex h-12 cursor-pointer flex-row content-center items-center gap-5 rounded-xl p-4">
+          <div className="hover:bg-highlight hover:text-primary flex h-12 cursor-pointer flex-row content-center items-center gap-5 rounded-xl p-4">
             <div>
               <IoChatboxOutline size="20px" />
             </div>
@@ -90,7 +90,7 @@ const Sidebar = () => {
           </div>
         </div>
         {/* Horizontal separator */}
-        <div className="text-primary my-6">
+        <div className="my-6 text-white">
           <hr />
         </div>
         {/* Sidebar language control group */}

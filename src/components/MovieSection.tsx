@@ -14,7 +14,7 @@ const MovieSection = () => {
 
   return (
     <div className="mt-20">
-      <h1 className="text-primary mb-4 text-4xl font-bold">Top Anime Movies</h1>
+      <h1 className="mb-4 text-4xl font-bold text-white">Top Anime Movies</h1>
       <div className="grid min-w-[300px] grid-cols-2 place-content-around gap-10 md:grid-cols-4 lg:grid-cols-5">
         {data?.Page?.media?.map((anime) => (
           <div

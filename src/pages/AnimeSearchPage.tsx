@@ -36,7 +36,7 @@ const AnimeSearchPage = () => {
   return (
     <div className="mt-20">
       <div className="flex justify-between">
-        <h1 className="text-primary mb-4 text-4xl font-bold">
+        <h1 className="mb-4 text-4xl font-bold text-white">
           Search results for: "{keyword}"
         </h1>
       </div>
@@ -59,7 +59,7 @@ const AnimeSearchPage = () => {
           onClick={() => {
             prevPage();
           }}
-          className="bg-secondary m-2 cursor-pointer rounded p-2"
+          className="bg-highlight text-primary m-2 cursor-pointer rounded p-2 hover:text-white"
         >
           Previous
         </button>
@@ -67,7 +67,7 @@ const AnimeSearchPage = () => {
           onClick={() => {
             nextPage();
           }}
-          className="bg-secondary m-2 cursor-pointer rounded p-2"
+          className="bg-highlight text-primary m-2 cursor-pointer rounded p-2 hover:text-white"
         >
           Next
         </button>

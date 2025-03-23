@@ -13,7 +13,7 @@ const AnimeDetailPage = () => {
   if (error) return <p>Oh no... {error.message}</p>;
 
   return (
-    <div className="mt-20 grid grid-cols-1 gap-y-10">
+    <div className="mt-20 grid grid-cols-1 gap-y-10 text-white">
       <div className="group flex max-h-[354px] min-h-[250px] w-full cursor-pointer gap-4">
         <img
           src={data?.Media?.coverImage?.large || ""}

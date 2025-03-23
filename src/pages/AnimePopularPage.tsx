@@ -37,7 +37,7 @@ const AnimePopularPage = () => {
 
   return (
     <div className="mt-20">
-      <h1 className="text-primary mb-4 text-4xl font-bold">
+      <h1 className="mb-4 text-4xl font-bold text-white">
         Most Popular TV Series
       </h1>
       <div className="grid min-w-[300px] grid-cols-2 place-content-around gap-10 md:grid-cols-4 lg:grid-cols-5">
@@ -59,7 +59,7 @@ const AnimePopularPage = () => {
           onClick={() => {
             prevPage();
           }}
-          className="bg-secondary m-2 cursor-pointer rounded p-2"
+          className="bg-highlight text-primary m-2 cursor-pointer rounded p-2 hover:text-white"
         >
           Previous
         </button>
@@ -67,7 +67,7 @@ const AnimePopularPage = () => {
           onClick={() => {
             nextPage();
           }}
-          className="bg-secondary m-2 cursor-pointer rounded p-2"
+          className="bg-highlight text-primary m-2 cursor-pointer rounded p-2 hover:text-white"
         >
           Next
         </button>

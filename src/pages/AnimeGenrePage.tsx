@@ -36,9 +36,7 @@ const AnimeGenrePage = () => {
   return (
     <div className="mt-20">
       <div className="flex justify-between">
-        <h1 className="text-primary mb-4 text-4xl font-bold">
-          {genre} TV Series
-        </h1>
+        <h1 className="mb-4 text-4xl font-bold text-white">{genre} Anime</h1>
       </div>
       <div className="grid min-w-[300px] grid-cols-2 place-content-around gap-10 md:grid-cols-4 lg:grid-cols-5">
         {data?.Page?.media?.map((anime) => (
@@ -59,7 +57,7 @@ const AnimeGenrePage = () => {
           onClick={() => {
             prevPage();
           }}
-          className="bg-secondary m-2 cursor-pointer rounded p-2"
+          className="bg-highlight text-primary m-2 cursor-pointer rounded p-2 hover:text-white"
         >
           Previous
         </button>
@@ -67,7 +65,7 @@ const AnimeGenrePage = () => {
           onClick={() => {
             nextPage();
           }}
-          className="bg-secondary m-2 cursor-pointer rounded p-2"
+          className="bg-highlight text-primary m-2 cursor-pointer rounded p-2 hover:text-white"
         >
           Next
         </button>
