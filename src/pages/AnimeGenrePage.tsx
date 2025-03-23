@@ -30,8 +30,11 @@ const AnimeGenrePage = () => {
     }
   };
 
-  if (fetching) return <p>Loading...</p>;
-  if (error) return <p>Oh no... {error.message}</p>;
+  if (fetching) return <p className="mt-20 font-bold text-white">Loading...</p>;
+  if (error)
+    return (
+      <p className="mt-20 font-bold text-white">Oh no... {error.message}</p>
+    );
 
   return (
     <div className="mt-20">

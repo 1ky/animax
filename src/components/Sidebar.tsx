@@ -113,7 +113,9 @@ const Sidebar = () => {
               <IoLanguageOutline size="20px" />
             </div>
             <span>Adult</span>
-            <button className="mr-0 ml-auto h-[25px] w-10 cursor-pointer rounded-2xl border-[1px] align-middle text-xs uppercase">
+            <button
+              className={`mr-0 ml-auto h-[25px] w-10 cursor-pointer rounded-2xl border-[1px] align-middle text-xs uppercase ${adultSwitch ? "text-primary font-extrabold" : ""}`}
+            >
               {adultSwitch ? "on" : "off"}
             </button>
           </div>

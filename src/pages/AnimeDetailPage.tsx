@@ -9,8 +9,11 @@ const AnimeDetailPage = () => {
 
   const { data, fetching, error } = useAnimeIdQuery(animeId);
 
-  if (fetching) return <p>Loading...</p>;
-  if (error) return <p>Oh no... {error.message}</p>;
+  if (fetching) return <p className="mt-20 font-bold text-white">Loading...</p>;
+  if (error)
+    return (
+      <p className="mt-20 font-bold text-white">Oh no... {error.message}</p>
+    );
 
   return (
     <div className="mt-20 grid grid-cols-1 gap-y-10 text-white">
