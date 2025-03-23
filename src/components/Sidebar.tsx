@@ -16,7 +16,7 @@ const Sidebar = () => {
   const open = useOpenStore((state) => state.open);
 
   return (
-    <div className="">
+    <div className="fixed z-20 lg:relative">
       <div
         className={`bg-complement relative top-0 left-0 z-10 mt-20 w-64 border-r-2 p-6 text-white ${
           open ? "inline-block" : "hidden"
@@ -65,7 +65,7 @@ const Sidebar = () => {
           </NavLink>
         </div>
         {/* Horizontal separator */}
-        <div className="my-6 text-white">
+        <div className="my-6 text-white opacity-75">
           <hr />
         </div>
         {/* Sidebar group items 2 */}
@@ -90,7 +90,7 @@ const Sidebar = () => {
           </div>
         </div>
         {/* Horizontal separator */}
-        <div className="my-6 text-white">
+        <div className="my-6 text-white opacity-75">
           <hr />
         </div>
         {/* Sidebar language control group */}

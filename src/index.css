@@ -7,3 +7,9 @@
     --color-complement: #49538a;
     --color-highlight: #111428;
 }
+
+a.active {
+    background-color: var(--color-highlight);
+    border-radius: var(--radius-xl);
+    color: var(--color-primary);
+}
