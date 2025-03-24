@@ -25,7 +25,6 @@ const AnimeCard = ({ id, image, title }: Props) => {
       <h1 className="group overflow-hidden font-semibold text-nowrap overflow-ellipsis">
         {title}
       </h1>
-      {/* <div className="hidden group-hover:inline-block w-full h-96 border-2 absolute z-30 bg-green-300"></div> */}
     </div>
   );
 };
