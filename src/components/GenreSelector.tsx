@@ -5,7 +5,7 @@ interface Props {
 
 const GenreSelector = ({ title, image }: Props) => {
   return (
-    <div className="bg-secondary group relative flex h-full w-full cursor-pointer items-center justify-center overflow-hidden rounded-2xl shadow-lg">
+    <div className="bg-secondary group relative flex h-full max-h-[220px] min-h-[220px] w-full cursor-pointer items-center justify-center overflow-hidden rounded-2xl shadow-lg">
       <img
         src={image}
         alt={title}

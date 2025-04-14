@@ -18,7 +18,7 @@ const Sidebar = () => {
   return (
     <div className="fixed z-20 lg:relative">
       <div
-        className={`bg-complement relative top-0 left-0 z-10 mt-20 w-64 border-r-2 p-6 text-white ${
+        className={`bg-complement relative top-0 left-0 z-10 mt-20 min-h-[calc(100vh-5rem)] w-64 border-r-2 p-6 text-white ${
           open ? "inline-block" : "hidden"
         }`}
       >
@@ -64,10 +64,12 @@ const Sidebar = () => {
             </div>
           </NavLink>
         </div>
+
         {/* Horizontal separator */}
         <div className="my-6 text-white opacity-75">
           <hr />
         </div>
+
         {/* Sidebar group items 2 */}
         <div className="flex flex-col gap-4">
           <div className="hover:bg-highlight hover:text-primary flex h-12 cursor-pointer flex-row content-center items-center gap-5 rounded-xl p-4">
@@ -89,13 +91,15 @@ const Sidebar = () => {
             <span>Community</span>
           </div>
         </div>
+
         {/* Horizontal separator */}
         <div className="my-6 text-white opacity-75">
           <hr />
         </div>
+
         {/* Sidebar language control group */}
         <div className="rounded-xl border-[1px]">
-          <div className="flex h-12 cursor-pointer flex-row content-center items-center gap-5 rounded-xl p-4">
+          {/* <div className="flex h-12 cursor-pointer flex-row content-center items-center gap-5 rounded-xl p-4">
             <div>
               <IoLanguageOutline size="20px" />
             </div>
@@ -103,8 +107,8 @@ const Sidebar = () => {
             <button className="mr-0 ml-auto h-[25px] w-10 cursor-pointer rounded-2xl border-[1px] align-middle text-xs uppercase">
               off
             </button>
-          </div>
-          <hr />
+          </div> */}
+          {/* <hr /> */}
           <div
             onClick={() => setAdultSwitch(!adultSwitch)}
             className="flex h-12 cursor-pointer flex-row content-center items-center gap-5 rounded-xl p-4"
